@@ -1,0 +1,426 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="shortcut icon" type="image/png" href="{% static 'img/rocket.png' %}"/>
+	<title>Home</title>
+	<style type="text/css">
+		.content{
+			padding: 20px;
+		}
+	</style>
+</head>
+
+<script>
+
+function test1() {
+
+	document.getElementById("starName").value = "Star1"
+	document.getElementById("starRadius").value = "373."
+	document.getElementById("starMass").value = "10"
+	document.getElementById("effectiveTemperature").value = "10"
+	
+	
+	document.getElementById("planetName").value = "Planet1"
+	document.getElementById("planetRadius").value = "0.066200003"
+	document.getElementById("planetMass").value = "10000"
+	document.getElementById("atmosphere").value = "10"
+	document.getElementById("planetAlbedo").value = "10"
+	
+	document.getElementById("planetSemiaxis").value = "19.549999"
+	document.getElementById("planetPeriod").value = "9.4341497"
+	document.getElementById("planetInclinationAngle").value = "90"
+	document.getElementById("planetObliquityAngle").value = "0"
+	document.getElementById("planetEccentricity").value = "0"
+
+}
+
+function test2() {
+
+	document.getElementById("starName").value = "Star2";
+	document.getElementById("starRadius").value = "373.";
+	document.getElementById("starMass").value = "10";
+	document.getElementById("effectiveTemperature").value = "10";
+
+	var val = "copper";
+	var sel = document.getElementById('starColor');
+	var opts = sel.options;
+
+	for (var opt, j = 0; opt = opts[j]; j++) {
+		if (opt.value == val) {
+			sel.selectedIndex = j;
+			break;
+		}
+	}
+	
+	
+	document.getElementById("planetName").value = "Planet2"
+	document.getElementById("planetRadius").value = "0.066200003"
+	document.getElementById("planetMass").value = "10000"
+	document.getElementById("atmosphere").value = "10"
+	document.getElementById("planetAlbedo").value = "10"
+	
+	document.getElementById("planetSemiaxis").value = "19.549999"
+	document.getElementById("planetPeriod").value = "9.4341497"
+	document.getElementById("planetInclinationAngle").value = "90"
+	document.getElementById("planetObliquityAngle").value = "0"
+	document.getElementById("planetEccentricity").value = "0"
+
+	create_moons()
+
+	document.getElementById("moonName_1").value = "Moon1"
+	document.getElementById("moonRadius_1").value = "0.0288431223213"
+	document.getElementById("moonMass_1").value = "10000"
+	document.getElementById("moonAlbedo_1").value = "0"
+	document.getElementById("moonDistance_1").value = "4.10784266075"
+	document.getElementById("moonSemiaxis_1").value = "0"
+	document.getElementById("moonPeriod_1").value = "0.0751017821823"
+	document.getElementById("moonInclinationAngle_1").value = "90"
+	document.getElementById("moonObliquityAngle_1").value = "0"
+	document.getElementById("moonEccentricity_1").value = "0"
+
+
+}
+
+function test3() {
+
+	document.getElementById("starName").value = "Star2";
+	document.getElementById("starRadius").value = "373.";
+	document.getElementById("starMass").value = "10";
+	document.getElementById("effectiveTemperature").value = "10";
+
+	var val = "bone";
+	var sel = document.getElementById('starColor');
+	var opts = sel.options;
+
+	for (var opt, j = 0; opt = opts[j]; j++) {
+		if (opt.value == val) {
+			sel.selectedIndex = j;
+			break;
+		}
+	}
+	
+	
+	document.getElementById("planetName").value = "Planet2"
+	document.getElementById("planetRadius").value = "0.066200003"
+	document.getElementById("planetMass").value = "10000"
+	document.getElementById("atmosphere").value = "10"
+	document.getElementById("planetAlbedo").value = "10"
+
+	create_spots()
+
+	document.getElementById("spotRadius_1").value = "0.05"
+	document.getElementById("spotIntensity_1").value = "0.5"
+	document.getElementById("spotLatitude_1").value = "-30"
+	document.getElementById("spotLongitude_1").value = "-55"
+
+	create_spots()
+
+	document.getElementById("spotRadius_2").value = "0.05"
+	document.getElementById("spotIntensity_2").value = "0.9"
+	document.getElementById("spotLatitude_2").value = "-45"
+	document.getElementById("spotLongitude_2").value = "45"
+	
+	document.getElementById("planetSemiaxis").value = "19.549999"
+	document.getElementById("planetPeriod").value = "9.4341497"
+	document.getElementById("planetInclinationAngle").value = "90"
+	document.getElementById("planetObliquityAngle").value = "0"
+	document.getElementById("planetEccentricity").value = "0"
+
+	create_moons()
+
+	document.getElementById("moonName_1").value = "Moon1"
+	document.getElementById("moonRadius_1").value = "0.0288431223213"
+	document.getElementById("moonMass_1").value = "10000"
+	document.getElementById("moonAlbedo_1").value = "0"
+	document.getElementById("moonDistance_1").value = "4.10784266075"
+	document.getElementById("moonSemiaxis_1").value = "0"
+	document.getElementById("moonPeriod_1").value = "0.0751017821823"
+	document.getElementById("moonInclinationAngle_1").value = "90"
+	document.getElementById("moonObliquityAngle_1").value = "0"
+	document.getElementById("moonEccentricity_1").value = "0"
+
+	create_moons()
+
+	document.getElementById("moonName_2").value = "Moon2"
+	document.getElementById("moonRadius_2").value = "0.0298431223213"
+	document.getElementById("moonMass_2").value = "10000"
+	document.getElementById("moonAlbedo_2").value = "0"
+	document.getElementById("moonDistance_2").value = "4.10784266075"
+	document.getElementById("moonSemiaxis_2").value = "0"
+	document.getElementById("moonPeriod_2").value = "0.751017821823"
+	document.getElementById("moonInclinationAngle_2").value = "75"
+	document.getElementById("moonObliquityAngle_2").value = "0"
+	document.getElementById("moonEccentricity_2").value = "0"
+
+
+}
+
+function wait() {
+   document.getElementById("form").style.display = "none";
+   document.getElementById("wait").style.display = "block";
+}
+
+var room = 0;
+var room2 = 0;
+
+function addRoom() {
+	var objTo = document.getElementById('moons');
+    var divtest = document.createElement("div");
+    divtest.innerHTML = '<input type="hidden" value="'+room+'" id="room" name="room">';   
+    divtest.innerHTML += '<input type="hidden" value="'+room2+'" id="room2" name="room2">'; 
+    objTo.appendChild(divtest)
+    wait();
+}
+
+function create_moons() { 
+    room++;
+    var objTo = document.getElementById('moons')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclassMoon"+room);
+	var rdiv = 'removeclassMoon'+room;
+    divtest.innerHTML = '<div class="panel panel-default"> <div class="panel panel-heading"> <div class="text-right"><button type="button" onclick="remove_moons_fields('+room+')" class="btn btn-danger"> <span class="glyphicon glyphicon-minus"></span> </button></div> Moon '+room+' </div> <div class="panel-body"> <div class="row"> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonName_'+room+'" class="form-label">Name:</label> <input id="moonName_'+room+'" type="text" name="moonName_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonRadius_'+room+'" class="form-label">Radius:</label> <input id="moonRadius_'+room+'" type="text" name="moonRadius_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonMass_'+room+'" class="form-label">Mass:</label> <input id="moonMass_'+room+'" type="text" name="moonMass_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonAlbedo_'+room+'" class="form-label">Albedo:</label> <input id="moonAlbedo_'+room+'" type="text" name="moonAlbedo_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonDistance_'+room+'" class="form-label">Distance:</label> <input id="moonDistance_'+room+'" type="text" name="moonDistance_'+room+'" class="form-control"> </div> <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> <hr> <h3>Orbit</h3> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonSemiaxis_'+room+'" class="form-label">Semiaxis:</label> <input id="moonSemiaxis_'+room+'" type="text" name="moonSemiaxis_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonPeriod_'+room+'" class="form-label">Period:</label> <input id="moonPeriod_'+room+'" type="text" name="moonPeriod_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonInclinationAngle_'+room+'" class="form-label">Inclination Angle:</label> <input id="moonInclinationAngle_'+room+'" type="text" name="moonInclinationAngle_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonObliquityAngle_'+room+'" class="form-label">Obliquity Angle:</label> <input id="moonObliquityAngle_'+room+'" type="text" name="moonObliquityAngle_'+room+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="moonEccentricity_'+room+'" class="form-label">Eccentricity:</label> <input id="moonEccentricity_'+room+'" type="text" name="moonEccentricity_'+room+'" class="form-control"> </div> </div> </div> </div>';
+    
+    objTo.appendChild(divtest)
+}
+
+function remove_moons_fields(rid) {
+	   room--;
+   $('.removeclassMoon'+rid).remove();
+}
+
+function remove_spots_fields(rid) {
+	   room2--;
+   $('.removeclassSpot'+rid).remove();
+}
+
+function create_spots() { 
+    room2++;
+    var objTo = document.getElementById('spots')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclassSpot"+room2);
+	var rdiv = 'removeclassSpot'+room2;
+    divtest.innerHTML = '<div class="panel panel-default"> <div class="panel panel-heading"> <div class="text-right"><button type="button" onclick="remove_spots_fields('+room2+')" class="btn btn-danger"> <span class="glyphicon glyphicon-minus"></span> </button></div> Spot '+room2+' </div> <div class="panel-body"> <div class="row"> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="spotRadius_'+room2+'" class="form-label">Radius:</label> <input id="spotRadius_'+room2+'" type="text" name="spotRadius_'+room2+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="spotIntensity_'+room2+'" class="form-label">Intensity:</label> <input id="spotIntensity_'+room2+'" type="text" name="spotIntensity_'+room2+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="spotLatitude_'+room2+'" class="form-label">Latitude:</label> <input id="spotLatitude_'+room2+'" type="text" name="spotLatitude_'+room2+'" class="form-control"> </div> <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <label for="spotLongitude_'+room2+'" class="form-label">Longitude:</label> <input id="spotLongitude_'+room2+'" type="text" name="spotLongitude_'+room2+'" class="form-control"> </div>';
+    
+    objTo.appendChild(divtest)
+}
+
+
+</script>
+
+<body>
+
+<div class="jumbotron text-center">
+	<h1>Simulation Tool</h1>
+</div>
+
+<div class="content" id="form">
+
+	<div class="text-center" style="margin-bottom: 3%">
+
+		<button type="button" onclick="test1()" class="btn btn-primary">Simulation 1</button>
+		<button type="button" onclick="test2()" class="btn btn-primary">Simulation 2</button>
+		<button type="button" onclick="test3()" class="btn btn-primary">Simulation 3</button>
+		
+	</div>	
+
+	<section>
+		
+		
+		<form method="GET" action="simulator.html" onsubmit="addRoom()">
+			
+		
+			<div class="panel panel-default">
+				<div class="panel panel-heading">
+					Star					
+				</div>
+				<div class="panel panel-body">
+					<div class="row">
+				
+						<img class="img-rounded col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width: 150px;" src="{% static 'img/star.png' %}">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="starName" class="form-label">Name:</label>
+							<input id="starName" type="text" name="starName" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="starRadius" class="form-label">Radius:</label>
+							<input id="starRadius" type="text" name="starRadius" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="starMass" class="form-label">Mass:</label>
+							<input id="starMass" type="text" name="starMass" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="effectiveTemperature" class="form-label">Effective Temperature:</label>
+							<input id="effectiveTemperature" type="text" name="effectiveTemperature" class="form-control">
+						</div>
+					      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					      	<label for="starColor"  class="form-label">Color: </label>
+					        <select id="starColor" name="starColor" class="form-control">
+					          
+					          <option value="gist_heat">Red</option>
+					          <option value="copper">Yellow</option>
+					          <option value="bone">Blue</option>
+					          <option value="Greys_r">White</option>
+
+					        </select>
+					      </div>
+						
+					</div>	
+				</div>
+				<div class="text-center"><h3>Spots</h3></div>
+				<div class="text-right" style="margin-right: 1%"><button type="button" onclick="create_spots()" class="btn btn-info">
+		          <span class="glyphicon glyphicon-plus"></span>
+		        </button></div>
+				<div class="panel panel-body">
+					<div class="row">				
+												
+						<div style="margin-left: 20%"><div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="spots"></div></div>
+						
+						
+					</div>	
+					
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel panel-heading">
+					Planet					
+				</div>
+				<div class="panel panel-body">
+					<div class="row">
+				
+						<img class="img-rounded col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width: 150px;" src="{% static 'img/planet.png' %}">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetName" class="form-label">Name:</label>
+							<input id="planetName" type="text" name="planetName" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetRadius" class="form-label">Radius:</label>
+							<input id="planetRadius" type="text" name="planetRadius" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetMass" class="form-label">Mass:</label>
+							<input id="planetMass" type="text" name="planetMass" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="atmosphere" class="form-label">Atmosphere:</label>
+							<input id="atmosphere" type="text" name="atmosphere" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetAlbedo" class="form-label">Albedo:</label>
+							<input id="planetAlbedo" type="text" name="planetAlbedo" class="form-control">
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<hr>
+							<h3>Orbit</h3>
+						</div>
+						
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetSemiaxis" class="form-label">Semiaxis:</label>
+							<input id="planetSemiaxis" type="text" name="planetSemiaxis" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetPeriod" class="form-label">Period:</label>
+							<input id="planetPeriod" type="text" name="planetPeriod" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetInclinationAngle" class="form-label">Inclination Angle:</label>
+							<input id="planetInclinationAngle" type="text" name="planetInclinationAngle" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetObliquityAngle" class="form-label">Obliquity Angle:</label>
+							<input id="planetObliquityAngle" type="text" name="planetObliquityAngle" class="form-control">
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<label for="planetEccentricity" class="form-label">Eccentricity:</label>
+							<input id="planetEccentricity" type="text" name="planetEccentricity" class="form-control">
+						</div>
+						
+					</div>	
+				</div>
+			</div>
+			
+				<div class="panel panel-default">
+				<div class="panel panel-heading">
+					Moons					
+				</div>
+				<div class="text-center"><h3>Moons</h3></div>
+				<div class="text-right" style="margin-right: 1%"><button type="button" onclick="create_moons()" class="btn btn-info">
+		          <span class="glyphicon glyphicon-plus"></span>
+		        </button></div>
+				<div class="panel panel-body">
+					<div class="row">				
+						<img class="img-rounded col-lg-3 col-md-3 col-sm-3 col-xs-3" style="width: 150px;" src="{% static 'img/moon.png' %}">
+						
+						<!-- Start Moons!-->
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="moons"></div>
+						
+						
+					</div>	
+					
+				</div>
+			</div>
+
+			<div class="text-center"><input class="btn btn-primary" type="submit" name="Submit"></div>
+			</div>
+			
+		
+		</form>
+
+
+	</section>
+
+	<section style="display: none;" id="wait">
+		
+		<center><h1>Wait ... We are generating your simulation</h1>
+		<img src="{% static 'img/wait.gif' %}"></center>
+
+	</section>
+</div>
+
+<a href="default.html" onclick="wait();">Click Here To Generate Simulation</a>
+	
+
+<script type="text/javascript">
+	var dados = {
+        star : {
+        },
+    	planet:{
+        	name: "lero lero"
+        },
+        moons:[
+            {},
+            {}
+        ]
+    
+    
+    };
+
+
+$.ajax({
+	url:"",
+	type:"",
+	content:"",
+	data: dados,
+	success: function(){
+
+	},
+	error:function(){
+
+	}
+});
+
+
+
+
+
+
+</script>
+</body>
+</html>
